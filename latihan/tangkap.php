@@ -15,6 +15,6 @@
       } else {
          $hobi3 = '';
       }
-      echo 'Nama Anda adalah : '. $_POST['nama'].'<br>Anda seorang : '.$_POST['gender'].'<br>Yang Beragama : '.$_POST['agama'].'<br>Dan memiliki Hobi : '.$hobi1.$hobi2.$hobi3.'<br>Koemntar anda : '.$_POST['komentar'];
+      echo 'Nama Anda adalah : '. $_POST['nama'].'<br>Anda seorang : '.$_POST['gender'].'<br>Yang Beragama : '.$_POST['agama'].'<br>Dan memiliki Hobi : '.$hobi1.$hobi2.$hobi3.'<br>Komentar anda : '.$_POST['komentar'];
    }
 ?>

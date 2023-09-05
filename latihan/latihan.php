@@ -6,10 +6,10 @@
 <body bgcolor="#999999">
    <br>
    <br>
-      <table width="50td_persen" border="0" align="center">
+      <table width="" border="0" align="center">
          <tr>
-            <td width="35td_persen">
-               <table border="0" width="100td_persen" bgcolor="#00CCFF">
+            <td width="1000">
+               <table border="0" width="1000" align="center" bgcolor="#00CCFF">
                   <tr>
                      <td>
                         <h3>
@@ -23,7 +23,7 @@
                   </tr>
                </table>
                <form action="tangkap.php" method="post">
-                  <table border="0" width="100td_persen" bgcolor="#FFFFFF">
+                  <table border="0" width="1000" bgcolor="#FFFFFF">
                      <tr>
                         <td>
                            <p align="right">
