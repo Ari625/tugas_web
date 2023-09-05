@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-   <title>Latihan Form berbasis INput proses dan Output</title>
+   <title>Latihan Form berbasis Input proses dan Output</title>
 </head>
 <body bgcolor="#999999">
    <br>
