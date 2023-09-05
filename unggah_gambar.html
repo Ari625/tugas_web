@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Halaman Unggah Gambar</title>
+</head>
+<body>
+	<h1>Unggah Gambar</h1>
+	<form action="upload.php" method="POST" enctype="multipart/form-data">
+		<input type="file" name="image" id="image">
+		<input type="submit" value="upload">
+	</form>
+	<h2>Gambar Yang Diunggah</h2>
+	<div id="preview"></div>
+
+	<script>
+		const fileInput = document.getElementById('image');
+		const previewDiv = document.getElementById('preview');
+
+		fileInput.addEventLiswtener('change',function(){
+			const file = fileInput.files[0];
+			const reader = new fileReader();
+
+			reader.onload = function() {
+				const img = document.createElement('img');
+				img.src = reader.result;
+				previewDiv.innerHTML = '';
+				previewDiv.appendChild(img);
+			}
+			if (file) {
+				reader.readAsDataURL(file);
+			}
+		});
+	</script>
+
+</body>
+</html>
