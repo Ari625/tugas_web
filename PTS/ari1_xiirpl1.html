@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+   <title>Formulir Pendaftaran</title>
+</head>
+<body class="p-3">
+   <h1 class="text-center">
+      Formulir Pendaftaran
+   </h2>
+   <h4 class="text-center">
+      PTS Ari Rifandi XII-RPL 1
+   </h4>
+   <br>
+   <table>
+      <form action="ari2_xiirpl1.php" method="post">
+         <tr>
+            <td>
+               Nama 
+            </td>
+            <td></td>
+            <td>
+               <input type="text" name="nama">
+            </td>
+         </tr>
+         <tr>
+            <td>
+               Jenis Kelamin
+            </td>
+            <td></td>
+            <td>
+               <input type="radio" name="jenis_k" value="laki-laki"> Laki laki
+            </td>
+         </tr>
+         <tr>
+            <td></td>
+            <td></td>
+            <td>
+               <input type="radio" name="jenis_k" value="perempuan"> Perempuan
+            </td>
+         </tr>
+         <tr>
+            <td>
+               Jurusan yang dipilih
+            </td>
+            <td></td>
+            <td>
+               <input type="radio" name="jurusan" value="nkpi"> NKPI
+            </td>
+         </tr>
+         <tr>
+            <td></td>
+            <td></td>
+            <td>
+               <input type="radio" name="jurusan" value="tphpi"> TPHPI
+            </td> 
+         </tr>
+         <tr>
+            <td></td>
+            <td></td>
+            <td>
+               <input type="radio" name="jurusan" value="tkj"> TKJ
+            </td>
+         </tr>
+         <tr>
+            <td></td>
+            <td></td>
+            <td>
+               <input type="radio" name="jurusan" value="rpl"> RPL
+            </td>
+         </tr>
+         <tr>
+            <td></td>
+            <td></td>
+            <td>
+               <input type="radio" name="jurusan" value="tab"> TAB
+            </td>
+         </tr>
+         <tr>
+            <td>
+               Hobby
+            </td>
+            <td></td>
+            <td>
+               <input type="checkbox" name="hobby[]" value="membaca"> Membaca
+            </td>
+         </tr>
+         <tr>
+            <td></td>
+            <td></td>
+            <td>
+               <input type="checkbox" name="hobby[]" value="menulis"> Menulis
+            </td>
+         </tr>
+         <tr>
+            <td></td>
+            <td></td>
+            <td>
+               <input type="checkbox" name="hobby[]" value="memasak"> Memasak
+            </td>
+         </tr>
+         <tr>
+            <td></td>
+            <td></td>
+            <td>
+               <input type="checkbox" name="hobby[]" value="game online"> Game online
+            </td>
+         </tr>
+         <tr>
+            <td>
+               Alamat
+            </td>
+            <td></td>
+            <td>
+               <textarea name="alamat"></textarea>
+            </td>
+         </tr>
+         <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>
+               <input type="submit" value=" Simpan " name="submit">
+            </td>
+         </tr>
+      </form>
+   </table>
+</body>
+</html>
