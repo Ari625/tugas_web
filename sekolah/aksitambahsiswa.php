@@ -16,7 +16,7 @@
    }
    $sql = "INSERT INTO siswa (nis,nama, alamat) VALUES ('$nis','$nama','$alamat')";
    $query = mysqli_query($database, $sql);
-   if(!$query) {
+   if($query) {
       header('location:siswa.php');
    } else {
       echo "Gagal Disimpan";
