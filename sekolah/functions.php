@@ -43,6 +43,13 @@ function update($data){
     return mysqli_affected_rows($conn);
 }
 
+//Delete
+function hapus($nis){
+    global $conn;
+    mysqli_query($conn, "DELETE FROM taruna WHERE nis = $nis");
+    return mysqli_affected_rows($conn);
+}
+
 //Searching
 function cari($keyword){
     
