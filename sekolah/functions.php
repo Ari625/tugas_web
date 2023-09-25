@@ -46,7 +46,7 @@ function update($data){
 //Delete
 function hapus($nis){
     global $conn;
-    mysqli_query($conn, "DELETE FROM taruna WHERE nis = $nis");
+    mysqli_query($conn, "DELETE FROM siswa WHERE nis = $nis");
     return mysqli_affected_rows($conn);
 }
 
