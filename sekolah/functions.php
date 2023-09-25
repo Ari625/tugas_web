@@ -27,14 +27,14 @@ function tambah($data){
 //Update
 function update($data){
     global $conn;
-    $nis    = htmlspecialchars($data["nis"]);
+    $nis    = $data["nis"];
     $nama   = htmlspecialchars($data["nama"]);
     $alamat = htmlspecialchars($data["alamat"]);
 
    $query = "UPDATE siswa SET
-            nama      = '$nama',
             nis       = '$nis',
-            email     = '$alamat'
+            nama      = '$nama',
+            alamat    = '$alamat'
             WHERE nis = '$nis'
             ";
 
