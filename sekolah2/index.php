@@ -23,6 +23,8 @@
       </b>
    </h3>
 
+  <hr>
+
    <form action="" method="POST" class="mb-3">
       <input type="text" name="keyword" size="40" autofocus placeholder="Masukan Keyword Pencarian.." autocomplete="off">
       <button type="submit" name="cari" class="btn btn-secondary">Cari!</button>
