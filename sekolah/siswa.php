@@ -37,7 +37,7 @@
          <td><?php echo "$data[alamat]"; ?></td>
          <td>
             <a href="editsiswa.php?nis=<?php echo "$data[nis]"; ?>">EDIT</a>
-           |
+            |
             <a href="hapussiswa.php?nis=<?php echo "$data[nis]"; ?>" onclick="return confirm('Anda yakin?')">HAPUS</a>
          </td>
       </tr>

@@ -3,13 +3,13 @@ $conn = mysqli_connect("localhost","root","","sekolah");
 
 //Conneections
 function query($query){
-   global $conn;
-   $result        = mysqli_query($conn, $query);
-   $rows          = [];
-   while ($row = mysqli_fetch_assoc($result)) {
-       $rows[]    = $row;
-   }
-   return $rows;
+    global $conn;
+    $result        = mysqli_query($conn, $query);
+    $rows          = [];
+    while ($row = mysqli_fetch_assoc($result)) {
+        $rows[]    = $row;
+    }
+    return $rows;
 }
 
 //Create
@@ -31,7 +31,7 @@ function update($data){
     $nama   = htmlspecialchars($data["nama"]);
     $alamat = htmlspecialchars($data["alamat"]);
 
-   $query = "UPDATE siswa SET
+    $query = "UPDATE siswa SET
             nis       = '$nis',
             nama      = '$nama',
             alamat    = '$alamat'

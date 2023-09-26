@@ -111,7 +111,7 @@
                         <td></td>
                         <td>
                            <input type="submit" name="kirim" value="KIRIM">
-                           ||
+                              ||
                            <input type="reset" name="reset" value="CANCEL">
                         </td>
                      </tr>

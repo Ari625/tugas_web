@@ -5,7 +5,7 @@
 
    if (isset($_POST["cari"])){
       $siswa = cari($_POST["keyword"]);
-  }
+   }
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -23,7 +23,7 @@
       </b>
    </h3>
 
-  <hr>
+   <hr>
 
    <form action="" method="POST" class="mb-3">
       <input type="text" name="keyword" size="40" autofocus placeholder="Masukan Keyword Pencarian.." autocomplete="off">

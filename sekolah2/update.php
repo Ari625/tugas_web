@@ -1,7 +1,7 @@
 <?php
-   require "functions.php";
+    require "functions.php";
 
-   $nis = $_GET["nis"];
+    $nis = $_GET["nis"];
 
 $sswa = query("SELECT * FROM siswa WHERE nis = $nis")[0];
 

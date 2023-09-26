@@ -12,15 +12,15 @@
 }
 
 .name::before, .name::after{
- content: attr(data-text);
- position: absolute;
- top: 0;
- left: 0;
- transition: 0.3s ease-out;
- -webkit-transition: 0.3s ease-out;
- -moz-transition: 0.3s ease-out;
- -ms-transition: 0.3s ease-out;
- -o-transition: 0.3s ease-out;
+   content: attr(data-text);
+   position: absolute;
+   top: 0;
+   left: 0;
+   transition: 0.3s ease-out;
+   -webkit-transition: 0.3s ease-out;
+   -moz-transition: 0.3s ease-out;
+   -ms-transition: 0.3s ease-out;
+   -o-transition: 0.3s ease-out;
 }
 
 .name:hover::before{
