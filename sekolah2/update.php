@@ -32,27 +32,33 @@ if ( isset($_POST["submit"])) {
 </head>
 <body>
     <h1>Ubah Data Siswa</h1>
-
-    <form action="" method="post" enctype="multipart/form-data">
-        <input type="hidden" name="nis" value="<?= $sswa["nis"]; ?>">
-        <ul>
-            <li>
-                <label for="nis">Nis : </label>
-                <input type="text" name="nis" id="nis" required value="<?= $sswa["nis"]; ?>">
-            </li>
-            <li>
-                <label for="nama">Nama : </label>
-                <input type="text" name="nama" id="nama" required value="<?= $sswa["nama"]; ?>">
-            </li>
-            <li>
-                <label for="alamat">Alamat : </label>
-                <input type="text" name="alamat" id="alamat" required value="<?= $sswa["alamat"]; ?>">
-            </li>
-            <li>
-                <button type="submit" name="submit">Ubah Data</button>
-            </li>
-        </ul>
+    <form action="" method="post">
+        <table border="0">
+            <tr>
+                <td>NIS</td>
+                <td>
+                    <input type="text" name="nis" id="nis" value="<?= $sswa['nis']; ?>">
+                </td>
+            </tr>
+            <tr>
+                <td>Nama</td>
+                <td>
+                    <input type="text" name="nama" id="nama" value="<?= $sswa['nama']; ?>">
+                </td>
+            </tr>
+            <tr>
+                <td>Alamat</td>
+                <td>
+                    <textarea name="alamat" id="alamat" cols="50" rows="5"><?= $sswa['alamat']; ?></textarea>
+                </td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>
+                    <input type="submit" value="simpan">
+                </td>
+            </tr>
+        </table>
     </form>
-
 </body>
 </html>

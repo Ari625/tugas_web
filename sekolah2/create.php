@@ -26,32 +26,29 @@
     <title>Tambah Data Taruna</title>
 </head>
 <body class="p-3">
-    <h1>Tambah Data Siswa</h1>
-
-    <form action="" method="post" enctype="multipart/form-data">
-        <ul>
-            <li>
-                <label for="nis">
-                    <font>NIS : </font>
-                </label>
-                <input type="text" name="nis" id="nis" required>
-            </li>
-            <li>
-                <label for="nama">
-                <font>Nama : </font>
-                </label>
-                <input type="text" name="nama" id="nama" required>
-            </li>
-            <li>
-                <label for="alamat">
-                    <font>alamat : </font>
-                </label>
-                <input type="text" name="alamat" id="alamat">
-            </li>
-            <li>
-                <button type="submit" name="submit">Tambah Data</button>
-            </li>
-        </ul>
+    <h2 class="text-success text-center">Tambah Data Siswa</h2>
+    <hr>
+    <form action='' method="post">
+        <table border="0">
+            <tr>
+                <td>NIS</td>
+                <td><input type="text" name="nis" id="nis"></td>
+            </tr>
+            <tr>
+                <td>Nama</td>
+                <td><input type="text" name="nama" id="nama"></td>
+            </tr>
+            <tr>
+                <td>Alamat</td>
+                <td><textarea rows="5" cols = "50" id="alamat" name="alamat"></textarea></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>
+                    <input type="submit" value="submit" name="submit">
+                </td>
+            </tr>
+        </table>
     </form>
 </body>
 </html>
