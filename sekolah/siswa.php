@@ -4,19 +4,20 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-   <meta charset="UTF-8">
-   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-   <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <link rel="stylesheet" href="style.css">
+   <style>
+      <?php require "style.css"; ?>
+   </style>
    <title></title>
 </head>
 <body>
-   <h2>Master Data Siswa</h2>
+   <h2 class="align-center">Master Data Siswa</h2>
    <hr>
    <center>
       <input type="button" value="Tambah Data" onclick="location.href='tambahsiswa.php'">
    </center>
    <br>
+   <center>
    <table border='1' cellspacing='0' cellpadding='5'>
       <tr>
          <td>NO</td>
@@ -47,5 +48,6 @@
          }
       ?>
    </table>
+   </center>
 </body>
 </html>

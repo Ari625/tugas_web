@@ -1,0 +1,22 @@
+body{
+   background: #000000;
+   margin: 0;
+   height: 100vh;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   overflow: hidden;
+}
+#particle:ofter{
+   content: " ";
+   position: absolute;
+   top: -2000px;
+   width: 2px;
+   height: 2px;
+   background: transparent;
+   border-radius: 100%;
+   -webkit-border-radius: 100%;
+   -moz-border-radius: 100%;
+   -ms-border-radius: 100%;
+   -o-border-radius: 100%;
+}
