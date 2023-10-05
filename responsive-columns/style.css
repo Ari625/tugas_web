@@ -1,0 +1,18 @@
+.title{
+   column-span: all;
+   display: block;
+   padding: 20px;
+}
+.card{
+   border: 1px solid grey;
+   border-radius: 1%;
+   -webkit-border-radius: 1%;
+   -moz-border-radius: 1%;
+   -ms-border-radius: 1%;
+   -o-border-radius: 1%;
+}
+.content{
+   columns: 200px 2;
+   column-gap: 30px;
+   padding: 20px;
+}
