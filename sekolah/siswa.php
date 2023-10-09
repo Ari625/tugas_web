@@ -4,10 +4,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-   <link rel="stylesheet" href="style.css">
-   <style>
-      <?php require "style.css"; ?>
-   </style>
    <title></title>
 </head>
 <body>
