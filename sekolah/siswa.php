@@ -28,7 +28,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-   <title></title>
+   <title>Master data siswa</title>
 </head>
 <body>
    <h2 class="align-center">Master Data Siswa</h2>
