@@ -34,9 +34,9 @@
    <h2 class="align-center">Master Data Siswa</h2>
    <hr>
    <center> 
-      <form action="" method="POST" class="mb-3">
+      <form action="" method="POST">
          <input type="text" name="keyword" size="40" autofocus placeholder="Masukan Keyword Pencarian.." autocomplete="off">
-         <button type="submit" name="cari" class="btn btn-secondary">Cari!</button>
+         <button type="submit" name="cari">Cari!</button>
       </form>
    </center>
    <br>
