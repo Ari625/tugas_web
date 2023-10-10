@@ -1,5 +1,29 @@
 <?php 
    include "koneksi.php";
+
+   if(isset($_GET['pesan'])){
+      if($_GET['pesan']== 'gagal'){
+         echo "<script>alert('Login gagal! useraname dan password salah')</script>";
+      } else if($_GET['pesan']=="logout"){
+         echo "<script>alert('Anda berhasil logout')</script>";
+      } else if($_GET['pesan']=="belum login"){
+         echo "<script>alert('Anda harus login untuk mengakses halaman admin')</script>";
+      }
+   }
+   
+   $no = 1;
+   $sql="SELECT * FROM siswa";
+   $query = mysqli_query($database, $sql);
+
+   if (isset($_POST["cari"])){
+      $keyword = $_POST['keyword'];
+      $sql = "SELECT * FROM siswa WHERE
+                           nis LIKE '%$keyword%' OR 
+                           nama LIKE '%$keyword%' OR 
+                           alamat LIKE '%$keyword%'
+                           ";
+      $query = mysqli_query($database, $sql);
+   }
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -9,8 +33,11 @@
 <body>
    <h2 class="align-center">Master Data Siswa</h2>
    <hr>
-   <center>
-      <input type="button" value="Tambah Data" onclick="location.href='tambahsiswa.php'">
+   <center> 
+      <form action="" method="POST" class="mb-3">
+         <input type="text" name="keyword" size="40" autofocus placeholder="Masukan Keyword Pencarian.." autocomplete="off">
+         <button type="submit" name="cari" class="btn btn-secondary">Cari!</button>
+      </form>
    </center>
    <br>
    <center>
@@ -23,9 +50,6 @@
          <td>Aksi</td>
       </tr>
       <?php 
-         $no = 1;
-         $sql="SELECT * FROM siswa";
-         $query = mysqli_query($database, $sql);
          while($data = mysqli_fetch_array($query)) {
       ?>
       <tr>
@@ -44,6 +68,10 @@
          }
       ?>
    </table>
+   </center>
+   <br>
+   <center>
+      <input type="button" value="Tambah Data" onclick="location.href='tambahsiswa.php'">
    </center>
 </body>
 </html>

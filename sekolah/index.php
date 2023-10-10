@@ -17,7 +17,7 @@
    <!-- cek pesan notifikasi -->
    <?php 
       if(isset($_GET['pesan'])){
-         if($_GET['pesan']== "gagal"){
+         if($_GET['pesan']== 'gagal'){
             echo "Login gagal! useraname dan password salah";
          } else if($_GET['pesan']=="logout"){
             echo "Anda berhasil logout";
@@ -41,6 +41,9 @@
          <label for="floatingPassword">Password</label>
       </div>
       <button class="btn btn-primary w-100 py-2" type="submit">LOGIN</button>
+      <h6 class="mt-3 ">No have account? 
+         <a href="register.php" class="text fw-normal">Register</a>
+      </h6>
       <p class="mt-5 mb-3 text-body-secondary">&copy;2023</p>
    </form>
 </main>
