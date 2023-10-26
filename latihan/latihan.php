@@ -3,7 +3,7 @@
 <head>
    <title>Latihan Form berbasis Input proses dan Output</title>
 </head>
-<body bgcolor="#999999">
+<body bgcolor="#999999";>
    <br>
    <br>
       <table width="" border="0" align="center">
