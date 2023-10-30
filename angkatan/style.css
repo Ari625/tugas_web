@@ -1,0 +1,27 @@
+
+header{
+   grid-area: header;
+}
+article{
+   grid-area: article;
+}
+aside{
+   grid-area: aside;
+}
+nav{
+   grid-area: nav;
+}
+footer{
+   grid-area: footer;
+}
+body{
+   height: 100%;
+   overflow: hidden;
+
+   display: grid;
+   grid-template:
+   "header header    header" auto
+   "nav    article   aside "  17 1fr
+   "nav    footer    footer" auto/
+   auto    1fr       auto;
+}
