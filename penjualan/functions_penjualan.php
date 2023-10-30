@@ -39,8 +39,8 @@ function update($data)
 
    $query = "UPDATE barang SET
          nama_barang      = '$nama_barang',
-         satuan    = '$satuan'
-         merk    = '$merk'
+         satuan    = '$satuan',
+         merk    = '$merk',
          harga    = '$harga'
          WHERE kode_barang = '$kode_barang'
          ";
