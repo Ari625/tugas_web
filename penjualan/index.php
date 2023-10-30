@@ -64,7 +64,7 @@ if (isset($_POST["cari"])) {
 
             <?php else: ?>
 
-            <? endif ?>
+            <?php endif ?>
          </tr>
          <?php $i = 1 ?>
          <?php foreach ($barang as $row): ?>
@@ -100,7 +100,7 @@ if (isset($_POST["cari"])) {
                   </td>
                <?php else: ?>
 
-               <? endif ?>
+               <?php endif ?>
             </tr>
             <?php $i++; ?>
          <?php endforeach ?>
@@ -114,7 +114,7 @@ if (isset($_POST["cari"])) {
          </a>
       <?php else: ?>
 
-      <? endif ?>
+      <?php endif ?>
    <?php else: ?>
 
       <table class="table-bordered" border="1" cellspacing="1" cellpading="5">
