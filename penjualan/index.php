@@ -1,6 +1,10 @@
 <?php
 session_start();
 require "functions_penjualan.php";
+// if( !isset($_SESSION["login"])){
+//    header("location: login.php");
+//    exit;
+// }
 $barang = query("SELECT * FROM barang");
 
 if (isset($_POST["cari"])) {
@@ -28,7 +32,7 @@ if (isset($_POST["cari"])) {
       <?php if (isset($_SESSION["login"])): ?>
          <div class="position-relative top-0 end-0">
             <a href="logout.php">
-               <button class="btn btn-primary">
+               <button class="btn btn-secondary">
                   Logout
                </button>
             </a>
@@ -40,6 +44,18 @@ if (isset($_POST["cari"])) {
                   Login
                </button>
             </a>
+         </div>
+      <?php endif ?>
+      <?php if (isset($_SESSION["login"])): ?>
+         <div class="p-2">
+            <h5>
+               Login sebagai
+               <font class="
+                  <?= ($_SESSION["role"] === "admin") ? 'text-success' : 'text-primary' ?>
+               text-uppercase fw-bold">
+                  <?= $_SESSION["role"] ?>
+               </font>
+            </h5>
          </div>
       <?php endif ?>
    </div>

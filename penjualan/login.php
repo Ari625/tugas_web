@@ -9,7 +9,7 @@ if (isset($_POST["login"])) {
     $result = mysqli_query($conn, "SELECT * FROM users WHERE email = '$email'");
     if (mysqli_num_rows($result) === 1) {
         $row = mysqli_fetch_array($result);
-        if (mysqli_query($conn,"SELECT * FROM users WHERE password = '$password'")) {
+        if (mysqli_query($conn, "SELECT * FROM users WHERE password = '$password'")) {
             $_SESSION["login"] = true;
             $_SESSION["role"] = $row["role"];
             header("Location: index.php");
@@ -29,16 +29,18 @@ if (isset($_POST["login"])) {
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+
+    <link href="css/sign-in.css" rel="stylesheet">
     <title>Login</title>
 </head>
 
 <body>
 
-    <main class="form-signin w-50 m-auto">
+    <main class="form-signin w-100    m-auto row h-100 jusitify-content-center align-items-center">
         <form method="post" action="">
             <h1 class="h3 mb-3 fw-normal text-center">LOGIN</h1>
 
-            <?php if (isset($error)) : ?>
+            <?php if (isset($error)): ?>
                 <p class="text-danger">
                     email atau password salah
                 </p>
