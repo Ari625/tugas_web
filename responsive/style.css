@@ -24,19 +24,19 @@ footer{
    gap: 5px;
    margin: 14px;
    grid-template-columns: repeat(3, 1fr);
-   grid-template-rows: 1fr 2fr 2fr 1fr;
+   grid-template-rows: 2fr 2fr 2fr 2fr;
    grid-template-areas: 
    "header header    header" 
    "nav    article   aside " 
    "nav    footer    footer";
 }
-@media (max-width: 760xp){
+@media (max-width: 700px){
    .container  {
       grid-template-columns: 1fr;
-      grid-template-columns: 10% 30% 30% 10%;
+      grid-template-columns: 10 30 30 10;
       grid-template-areas: 
       "header"
-      "navbar"
+      "nav"
       "article"
       "aside"
       "footer"
