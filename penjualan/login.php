@@ -2,6 +2,11 @@
 session_start();
 require "functions_penjualan.php";
 
+if( isset($_SESSION["login"])){
+    header("location: index.php");
+    exit;
+}
+
 if (isset($_POST["login"])) {
     $email = $_POST["email"];
     $password = $_POST["password"];
