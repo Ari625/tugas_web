@@ -60,11 +60,36 @@ if (isset($_POST["cari"])) {
       <?php endif ?>
    </div>
    <hr>
-   <form action="" method="POST" class="mb-3">
-      <input type="text" name="keyword" size="40" autofocus placeholder="Masukan Keyword Pencarian.."
-         autocomplete="off">
-      <button type="submit" name="cari" class="btn btn-secondary">Cari!</button>
-   </form>
+   <div class="d-flex justify-content-start">
+      <form action="" method="POST" class="mb-2 row g-2">
+         <div class="col-auto">
+            <input type="text" name="keyword" size="40" autofocus placeholder="Masukan Keyword Pencarian.."
+               autocomplete="off" class="form-control">
+         </div>
+         <div class="col-auto">
+            <button type="submit" name="cari" class="btn btn-secondary">Cari!</button>
+         </div>
+      </form>
+         <?php if (isset($_SESSION["login"])): ?>
+            <?php if ($_SESSION["role"] === "admin" || $_SESSION["role"] === "default"): ?>
+               <div class="col-auto">
+                  <a href="create.php" class="btn btn-primary ms-2">
+                        Tambah
+                  </a>
+               </div>
+               <div class="col-auto">
+                  <a href="report.php" class="btn btn-success ms-2">
+                        Cetak
+                  </a>
+               </div>
+            <?php else: ?>
+
+            <?php endif ?>
+         <?php else: ?>
+
+         <?php endif ?>
+   </div>
+
 
    <?php if (isset($_SESSION["login"])): ?>
       <table class="table-bordered" border="1" cellspacing="1" cellpading="5">
@@ -122,15 +147,6 @@ if (isset($_POST["cari"])) {
          <?php endforeach ?>
       </table>
 
-      <?php if ($_SESSION["role"] === "admin" || $_SESSION["role"] === "default"): ?>
-         <a href="create.php" class="btn">
-            <button class="btn btn-primary">
-               Tambah
-            </button>
-         </a>
-      <?php else: ?>
-
-      <?php endif ?>
    <?php else: ?>
 
       <table class="table-bordered" border="1" cellspacing="1" cellpading="5">
