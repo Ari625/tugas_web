@@ -1,10 +1,10 @@
 <?php
 session_start();
 require "functions_penjualan.php";
-// if( !isset($_SESSION["login"])){
-//    header("location: login.php");
-//    exit;
-// }
+if (!isset($_SESSION["login"])) {
+   header("location: login.php");
+   exit;
+}
 $barang = query("SELECT * FROM barang");
 
 if (isset($_POST["cari"])) {
@@ -70,24 +70,24 @@ if (isset($_POST["cari"])) {
             <button type="submit" name="cari" class="btn btn-secondary">Cari!</button>
          </div>
       </form>
-         <?php if (isset($_SESSION["login"])): ?>
-            <?php if ($_SESSION["role"] === "admin" || $_SESSION["role"] === "default"): ?>
-               <div class="col-auto">
-                  <a href="create.php" class="btn btn-primary ms-2">
-                        Tambah
-                  </a>
-               </div>
-               <div class="col-auto">
-                  <a href="report.php" class="btn btn-success ms-2">
-                        Cetak
-                  </a>
-               </div>
-            <?php else: ?>
-
-            <?php endif ?>
+      <?php if (isset($_SESSION["login"])): ?>
+         <?php if ($_SESSION["role"] === "admin" || $_SESSION["role"] === "default"): ?>
+            <div class="col-auto">
+               <a href="create.php" class="btn btn-primary ms-2">
+                  Tambah
+               </a>
+            </div>
+            <div class="col-auto">
+               <a href="report.php" class="btn btn-success ms-2">
+                  Cetak
+               </a>
+            </div>
          <?php else: ?>
 
          <?php endif ?>
+      <?php else: ?>
+
+      <?php endif ?>
    </div>
 
 
@@ -130,12 +130,11 @@ if (isset($_POST["cari"])) {
                </td>
                <?php if ($_SESSION["role"] === "admin"): ?>
                   <td>
-                     <a href="update.php?kode_barang=<?= $row["kode_barang"]; ?>" class="text-primary btn">
+                     <a href="update.php?kode_barang=<?= $row["kode_barang"]; ?>" class="btn-warning btn m-1 ">
                         Ubah
                      </a>
                      |
-                     <a href="delete.php?kode_barang=<?= $row["kode_barang"]; ?>" onclick="return confirm('yakin?');"
-                        class="text-danger btn">
+                     <a href="delete.php?kode_barang=<?= $row["kode_barang"]; ?>" onclick="return confirm('yakin?');" class="btn-danger btn m-1">
                         Hapus
                      </a>
                   </td>
