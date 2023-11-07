@@ -30,18 +30,5 @@ foreach($barang as $row){
    $pdf->Cell(30,6, $row['merk'],1,0);
    $pdf->Cell(30,6, $row['harga'],1,1);
 }
-$pdf->Output();
+$pdf->Output("F","report/laporan.pdf");
 ?>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-   <meta charset="UTF-8">
-   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>Laporan</title>
-</head>
-<body>
-   <h3>
-      Laporan Berhasil Di Cetak
-   </h3>
-</body>
-</html>
