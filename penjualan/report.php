@@ -1,5 +1,10 @@
 <?php
 session_start();
+
+if (!isset($_SESSION["login"])) {
+   header("location: login.php");
+   exit;
+}
 require "library/fpdf184/fpdf.php";
 require "functions_penjualan.php";
 
