@@ -122,7 +122,6 @@ if (isset($_POST["cari"])) {
                <td>
                   <center>
                      <?= $generator->getBarcode($row["kode_barang"], $generator::TYPE_CODE_128); ?>
-                     <br>
                      <?= $row["kode_barang"]; ?>
                   </center>
                </td>

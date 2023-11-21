@@ -35,6 +35,6 @@ foreach($barang as $row){
    $pdf->Cell(30,6, $row['merk'],1,0);
    $pdf->Cell(30,6, $row['harga'],1,1);
 }
-// $pdf->Output();
-$pdf->Output("F","report/laporan.pdf");
+$pdf->Output();
+// $pdf->Output("F","report/laporan.pdf");
 ?>
