@@ -1,10 +1,13 @@
 <?php
 session_start();
-require "functions_penjualan.php";
+
 if (!isset($_SESSION["login"])) {
    header("location: login.php");
    exit;
 }
+
+require "functions_penjualan.php";
+require "library/vendor/autoload.php";
 $barang = query("SELECT * FROM barang");
 
 if (isset($_POST["cari"])) {
@@ -107,14 +110,21 @@ if (isset($_POST["cari"])) {
 
             <?php endif ?>
          </tr>
-         <?php $i = 1 ?>
+         <?php
+         $i = 1;
+         $generator = new Picqer\Barcode\BarcodeGeneratorHTML();
+         ?>
          <?php foreach ($barang as $row): ?>
             <tr>
                <td class="">
                   <?= $i; ?>
                </td>
                <td>
-                  <?= $row["kode_barang"]; ?>
+                  <center>
+                     <?= $generator->getBarcode($row["kode_barang"], $generator::TYPE_CODE_128); ?>
+                     <br>
+                     <?= $row["kode_barang"]; ?>
+                  </center>
                </td>
                <td>
                   <?= $row["nama_barang"]; ?>
@@ -134,7 +144,8 @@ if (isset($_POST["cari"])) {
                         Ubah
                      </a>
                      |
-                     <a href="delete.php?kode_barang=<?= $row["kode_barang"]; ?>" onclick="return confirm('yakin?');" class="btn-danger btn m-1">
+                     <a href="delete.php?kode_barang=<?= $row["kode_barang"]; ?>" onclick="return confirm('yakin?');"
+                        class="btn-danger btn m-1">
                         Hapus
                      </a>
                   </td>
