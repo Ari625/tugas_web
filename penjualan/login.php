@@ -14,7 +14,7 @@ if (isset($_POST["login"])) {
     $result = mysqli_query($conn, "SELECT * FROM users WHERE email = '$email'");
     if (mysqli_num_rows($result) === 1) {
         $row = mysqli_fetch_array($result);
-        if (mysqli_query($conn, "SELECT * FROM users WHERE password = '$password'")) {
+        if (mysqli_query($conn, "SELECT * FROM users WHERE password = '$password'") == 1) {
             $_SESSION["login"] = true;
             $_SESSION["role"] = $row["role"];
             header("Location: index.php");
