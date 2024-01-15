@@ -14,7 +14,7 @@ if (isset($_POST["login"])) {
     $result = mysqli_query($conn, "SELECT * FROM users WHERE email = '$email'");
     if (mysqli_num_rows($result) === 1) {
         $row = mysqli_fetch_array($result);
-        if (mysqli_query($conn, "SELECT * FROM users WHERE password = '$password'") == 1) {
+        if ($row["password"] === $password) {
             $_SESSION["login"] = true;
             $_SESSION["role"] = $row["role"];
             header("Location: index.php");
@@ -46,9 +46,9 @@ if (isset($_POST["login"])) {
             <h1 class="h3 mb-3 fw-normal text-center">LOGIN</h1>
 
             <?php if (isset($error)): ?>
-                <p class="text-danger">
+                <div class="alert alert-danger" role="alert">
                     email atau password salah
-                </p>
+                </div>
             <?php endif ?>
             <div class="form-floating">
                 <input type="email" class="form-control mb-1" id="email" placeholder="Masukan email" name="email">

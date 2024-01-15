@@ -1,75 +1,56 @@
+<?php
+session_start();
+require "functions_penjualan.php";
+$barang = query("SELECT * FROM barang");
+
+// header('Content-Type: application/json');
+json_encode($barang);
+?>
 <!DOCTYPE html>
-<html>
-
+<html lang="en">
 <head>
-   <title>Dynamsoft PHP Barcode Reader</title>
-   <script src="jquery-1.11.3.min.js"></script>
-   <script src="tiff.min.js"></script>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Karyawan</title>
 </head>
-
 <body>
-   <H1>Dynamsoft PHP Barcode Reader</H1>
-   <form action="dbr.php" method="post" enctype="multipart/form-data">
-      Select barcode image:
-      <input type="file" name="readBarcode" id="readBarcode" accept="image/*"><br>
-      <input type="submit" value="Read Barcode" name="submit">
-   </form>
-   <div id="tiff"></div>
-   <div id='image'></div>
+   <h1>
+      Transaksi
+   </h1>
+   <label for="kode_barang">Kode Barang</label>
+   <input type="text" name="kode_barang" id="kode_barang">
+   <table id="detailProduct" border="">
+      <tr>
+         <th>No</th>
+         <th>Kode Barang</th>
+         <th>Nama Barang</th>
+         <th>Satuan</th>
+         <th>Merk</th>
+         <th>Harga</th>
+      </tr>
+   </table>
    <script>
-      function reset() {
-         $("#image").empty();
-         $("#tiff").empty();
+      function getProductDetail(event){
+         //deteksi tombol enter
+         if(event.key === 'Enter'){
+            var kodeBarangValue = document.getElementById("kode_barang").value;
+            fetch('getProductDetail.php?kode_barang=' + kodeBarangValue)
+            .then(Response => response.json())
+            .then(product => {
+               //menampilkan informasi product
+            var table = document.getElementById("detailProduct");
+            table.innerHTML = "<tr><th>No</th><th>Kode Barang</th><th>Nama Barang</th><th>Satuan</th><th>Merk</th><th>Harga</th></tr>";
+            var row = table.insertRow(1);
+            row.insertCell(0).innerHTML = product.kode_barang;
+            row.insertCell(1).innerHTML = product.nama_barang;
+            row.insertCell(2).innerHTML = product.satuan;
+            row.insertCell(0).innerHTML = product.merk;
+            row.insertCell(0).innerHTML = product.harga;
+            })
+            .catch(error => console.error('Error:', error));
+         }
       }
-
-      var input = document.querySelector('input[type=file]');
-      input.onchange = function () {
-         reset();
-         var file = input.files[0];
-         var fileReader = new FileReader();
-         // get file extension
-         var extension = file.name.split('.').pop().toLowerCase();
-         var isTiff = false;
-
-         if (extension == "tif" || extension == "tiff") {
-            isTiff = true;
-         }
-
-         fileReader.onload = function (e) {
-            if (isTiff) {
-               console.debug("Parsing TIFF image...");
-               //initialize with 100MB for large files
-               Tiff.initialize({
-                  TOTAL_MEMORY: 100000000
-               });
-               var tiff = new Tiff({
-                  buffer: e.target.result
-               });
-               var tiffCanvas = tiff.toCanvas();
-               $(tiffCanvas).css({
-                  "max-width": "800px",
-                  "width": "100%",
-                  "height": "auto",
-                  "display": "block",
-                  "padding-top": "10px"
-               }).addClass("TiffPreview");
-               $("#tiff").append(tiffCanvas);
-            }
-            else {
-               var dataURL = e.target.result, img = new Image();
-               img.src = dataURL;
-               $("#image").append(img);
-            }
-         }
-
-         if (isTiff) {
-            fileReader.readAsArrayBuffer(file);
-         }
-         else
-            fileReader.readAsDataURL(file);
-      }
+      document.getElementById("kode_barang").addEventListener("keyup",getProductDetail);
    </script>
-
 </body>
-
 </html>
