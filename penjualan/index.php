@@ -142,7 +142,6 @@ if (isset($_POST["cari"])) {
                      <a href="update.php?kode_barang=<?= $row["kode_barang"]; ?>" class="btn-warning btn m-1 ">
                         Ubah
                      </a>
-                     |
                      <a href="delete.php?kode_barang=<?= $row["kode_barang"]; ?>" onclick="return confirm('yakin?');"
                         class="btn-danger btn m-1">
                         Hapus
